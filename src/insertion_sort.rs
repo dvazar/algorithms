@@ -5,14 +5,18 @@
 /// 
 
 pub fn insertion_sort (array: &mut Vec<i32>) {
-    for j in 1..array.len() {
-        let key = array[j];
-        let mut i = (j - 1) as isize;
-        while (i >= 0) && (array[i as usize] > key) {
-            array[(i + 1) as usize] = array[i as usize];
-            i -= 1;
+    for i in 1..array.len() {
+        let key = array[i];
+        let mut k = i;
+        for j in (0..i).rev() {
+            if array[j] > key {
+                array[j + 1] = array[j];
+                k = j;
+            } else {
+                break;
+            }
         }
-        array[(i + 1) as usize] = key;
+        array[k] = key;
     }
 }
 
