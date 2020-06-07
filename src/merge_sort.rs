@@ -1,4 +1,4 @@
-/// Merge sorting algorithm
+/// Merge sorting algorithm, O(n log n)
 /// 
 /// Input: <a1, a2, ..., an>.
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
@@ -6,7 +6,7 @@
 use std::mem::swap;
 
 
-pub fn merge_sort<'a> (array: &mut Vec<i32>) {
+pub fn merge_sort (array: &mut Vec<i32>) {
     let mut a: Vec<_> = array.drain(..).collect();
     let mut b = a.split_off(a.len() / 2);
     

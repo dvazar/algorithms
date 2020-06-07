@@ -1,4 +1,4 @@
-/// Insertion sorting algorithm
+/// Insertion sorting algorithm, O(n^2)
 /// 
 /// Input: <a1, a2, ..., an>.
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
