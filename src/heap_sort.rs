@@ -4,7 +4,7 @@
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
 ///
 
-fn heapify (array: &mut Vec<i32>, idx: usize, max: usize) {
+fn heapify <T: Ord + Copy> (array: &mut Vec<T>, idx: usize, max: usize) {
     let mut largest = idx;
     let left = idx * 2 + 1;
     let right = idx * 2 + 2;
@@ -22,14 +22,14 @@ fn heapify (array: &mut Vec<i32>, idx: usize, max: usize) {
     }
 }
 
-fn build_heap (array: &mut Vec<i32>) {
+fn build_heap <T: Ord + Copy> (array: &mut Vec<T>) {
     for i in (0..array.len()/2-1).rev() {
         heapify(array, i, array.len());
     }
 }
 
 
-pub fn heap_sort (array: &mut Vec<i32>) {
+pub fn heap_sort <T: Ord + Copy> (array: &mut Vec<T>) {
     build_heap(array);
     for i in (1..array.len()).rev() {
         let tmp = array[0];

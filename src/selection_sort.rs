@@ -4,9 +4,9 @@
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
 ///
 
-pub fn selection_sort (array: &mut Vec<i32>) {
+pub fn selection_sort <T: Ord + Copy> (array: &mut Vec<T>) {
     for i in (1..array.len()).rev() {
-        let mut max_val = i32::MIN;
+        let mut max_val = array[0];
         let mut max_idx: usize = 0;
         for j in 0..i+1 {
             if array[j] >= max_val {

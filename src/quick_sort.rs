@@ -4,7 +4,10 @@
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
 ///
 
-fn partition (array: &mut Vec<i32>, left: usize, right: usize) -> usize {
+fn partition <T> (array: &mut Vec<T>, left: usize, right: usize) -> usize
+where
+    T: Ord + Copy
+{
     let pivot = array[right];
     let mut store = left;
     for j in left..right {
@@ -22,7 +25,7 @@ fn partition (array: &mut Vec<i32>, left: usize, right: usize) -> usize {
     store
 }
 
-fn qsort (array: &mut Vec<i32>, left: usize, right: usize) {
+fn qsort <T: Ord + Copy> (array: &mut Vec<T>, left: usize, right: usize) {
     if left < right {
         let pivot_idx = partition(array, left, right);
         if pivot_idx != 0 {
@@ -33,7 +36,7 @@ fn qsort (array: &mut Vec<i32>, left: usize, right: usize) {
 }
 
 
-pub fn quick_sort (array: &mut Vec<i32>) {
+pub fn quick_sort <T: Ord + Copy> (array: &mut Vec<T>) {
     qsort(array, 0, array.len()-1)
 }
 

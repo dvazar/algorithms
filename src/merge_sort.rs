@@ -6,7 +6,7 @@
 use std::mem::swap;
 
 
-pub fn merge_sort (array: &mut Vec<i32>) {
+pub fn merge_sort <T: Ord + Copy> (array: &mut Vec<T>) {
     let mut a: Vec<_> = array.drain(..).collect();
     let mut b = a.split_off(a.len() / 2);
     

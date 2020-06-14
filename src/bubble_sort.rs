@@ -4,7 +4,7 @@
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
 /// 
 
-pub fn bubble_sort (array: &mut Vec<i32>) {
+pub fn bubble_sort <T: Ord + Copy> (array: &mut Vec<T>) {
     for i in 0..array.len()-2 {
         for j in (i+1..array.len()).rev() {
             if array[j] < array[j-1] {
