@@ -4,7 +4,7 @@
 /// Output: <a1', a2', ..., an'>, where a1' <= a2' <= ... <= an'.
 ///
 
-use crate::insertion_sort::insertion_sort;
+use super::insertion_sort::insertion_sort;
 
 
 pub fn bucket_sort <H> (array: &mut Vec<u32>, hash: H)
