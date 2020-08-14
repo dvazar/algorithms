@@ -1,1 +1,2 @@
-pub mod seq_search;
+pub mod binary_search;
+pub mod sequential_search;
