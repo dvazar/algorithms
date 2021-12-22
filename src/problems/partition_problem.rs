@@ -5,7 +5,7 @@ use std::cmp::min;
 /// Constraints:
 ///   1 <= nums.length <= 200
 ///   1 <= nums[i] <= 100
-fn can_partition(nums: Vec<i32>) -> bool {
+pub fn can_partition(nums: Vec<i32>) -> bool {
     let mut min_value = i32::MAX;
     let mut array_sum = 0;
     for num in nums.iter() {
